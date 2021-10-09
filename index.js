@@ -120,7 +120,7 @@ function generateRandomColors(length){
     let arrayOfColors=[]
     for(let i=0;i<length-1;i++)
      arrayOfColors.push(`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`)
-    arrayOfColors.unshift('rgb(0,255,0)');
+    arrayOfColors.unshift('rgb(21,255,40)');
     return arrayOfColors;
 }
 
