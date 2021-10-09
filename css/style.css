@@ -1,14 +1,6 @@
 /*Loader*/
-.loader {
-  border-radius: 50%;
-  background: url("../img/corona.png") no-repeat center center/cover;
-  width: 20%;
-  height: 50%;
-  margin-top: 2rem;
-  animation: spin 3s linear infinite;
-}
 
-@keyframes spin {
+@keyframes scaleF {
   0% {
     transform: scale(0.5);
   }
@@ -122,6 +114,14 @@ section {
   width: 90vw;
   height: 70vh;
   padding-top: 3rem;
+  position: relative;
+}
+.countries {
+  padding-top: 2rem;
+  width: 80vw;
+  padding: 1rem;
+  height: 30vh;
+  overflow: auto;
 }
 .select-container {
   width: 60%;
@@ -178,13 +178,7 @@ option {
   background: #ccc;
   color: #fff;
 }
-.countries {
-  padding-top: 2rem;
-  width: 80vw;
-  padding: 1rem;
-  height: 30vh;
-  overflow: auto;
-}
+
 .countries > button {
   margin: 0.5rem;
   padding: 1rem;
@@ -305,11 +299,11 @@ option {
 
     color: rgb(13, 134, 94);
     text-shadow: 5px 5px 5px rgb(238, 255, 248);
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   .form-control select {
     width: 50%;
-    font-size: 1.05rem;
+    font-size: 1rem;
     border-radius: 10px 0 10px 0;
   }
   option {
@@ -357,17 +351,21 @@ option {
 
     color: rgb(13, 134, 94);
     text-shadow: 5px 5px 5px rgb(238, 255, 248);
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   .form-control select {
     width: 50%;
-    font-size: 1.05rem;
+    font-size: 1rem;
     border-radius: 10px 0 10px 0;
   }
 }
 @media (max-width: 800px) and (min-width: 600px) {
   /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-
+  .submit {
+    width: 80%;
+    background: rgb(49, 119, 54);
+    color: rgb(216, 193, 193);
+  }
   #country-stat .container {
     width: 100%;
   }

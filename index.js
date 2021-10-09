@@ -22,19 +22,13 @@ const countriesDiv=document.querySelector('.countries')
 let isURLRequested=false;
 async function getCountriesAPI(){
     if(!window.localStorage.getItem('countries')){
-        let countries=await(await fetch(countriesURl)).json();
-        countries=countries.map(item=>{
-            return {
-                name:item.name.common,
-                region:item.region
-            }
-        })
+       
         window.localStorage.setItem('countries',JSON.stringify(countries))
          }
     
 }
 async function getCoronaStatsAPI(){
-if(!window.localStorage.getItem('coronaStats')){
+if(!window.localStorage.getItem('coronaStats')&&!window.localStorage.getItem('countries')){
     const requestCorona=await (await fetch(coronaURL)).json();
     let coronaStats=requestCorona.data;
     const str=coronaStats.map(item=>{
@@ -190,25 +184,25 @@ function buttonsListener(){
 
 
 
-// function setScroll(){
+function setScroll(){
       
-//     if(document.body.lastChild.nodeName=='BUTTON')
-//         document.body.removeChild(document.body.lastChild)
-//     let scrollBtn={}
-//     isScrolled=true;
-//     scrollBtn=document.createElement('button')
-//     scrollBtn.classList.add('scroll-btn')
-//     scrollBtn.innerHTML= `ScrollUp <i class="fa fa-arrow-circle-up"></i>`
-//     document.body.appendChild(scrollBtn)
-//     scrollBtn.addEventListener('click',()=>{window.scrollTo(0,window.scrollY-750)})
-// }
-// window.onscroll=()=>{
-//   if(window.scrollY>720)
-//          setScroll()
+    if(document.body.lastChild.nodeName=='BUTTON')
+        document.body.removeChild(document.body.lastChild)
+    let scrollBtn={}
+    isScrolled=true;
+    scrollBtn=document.createElement('button')
+    scrollBtn.classList.add('scroll-btn')
+    scrollBtn.innerHTML= `ScrollUp <i class="fa fa-arrow-circle-up"></i>`
+    document.body.appendChild(scrollBtn)
+    scrollBtn.addEventListener('click',()=>{window.scrollTo(0,window.scrollY-750)})
+}
+window.onscroll=()=>{
+  if(window.scrollY>720)
+         setScroll()
      
-//      else if(document.body.lastChild.nodeName=='BUTTON') {
-//            document.body.removeChild(document.body.lastChild)
-//      }
-//     }
+     else if(document.body.lastChild.nodeName=='BUTTON') {
+           document.body.removeChild(document.body.lastChild)
+     }
+    }
 
 
