@@ -194,7 +194,7 @@ function setScroll(){
     scrollBtn.classList.add('scroll-btn')
     scrollBtn.innerHTML= `ScrollUp <i class="fa fa-arrow-circle-up"></i>`
     document.body.appendChild(scrollBtn)
-    scrollBtn.addEventListener('click',()=>{window.scrollTo(0,window.scrollY-750)})
+    scrollBtn.addEventListener('click',()=>{window.scrollTo(0,0)})
 }
 window.onscroll=()=>{
   if(window.scrollY>720)
