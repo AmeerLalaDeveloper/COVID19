@@ -197,7 +197,7 @@ function setScroll(){
     scrollBtn.addEventListener('click',()=>{window.scrollTo(0,0)})
 }
 window.onscroll=()=>{
-  if(window.scrollY>720)
+  if(window.scrollY>730)
          setScroll()
      
      else if(document.body.lastChild.nodeName=='BUTTON') {
