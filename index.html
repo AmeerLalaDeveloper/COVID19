@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>COVID-19</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  
+    <!-- <div class="loader"></div>
+    <div class="dot-windmill"   </div> -->
+    <div class="container">
+        <section id="select-section">
+            <div class="select-container">
+            <form action="" id="myForm">
+                <div class="form-control">
+                    <label for="continent-select">Choose Continent : </label>
+                    <select name="continent-select" id="continent-select">
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Americas">Americas</option>
+                        <option value="Africa">Africa</option>
+                    </select>
+                  
+                </div>
+               <div class="form-control">
+                <label for="chart-select">Choose Chart Type : </label>
+                <select name="chart-select" id="chart-select">
+                    <option value="line">line</option>
+                    <option value="bar">bar</option>
+                    <option value="doughnut">doughnut</option>
+                </select>
+                </div>
+                <div class="form-control">
+                    <label for="statistics-select">Choose Statistic Type : </label>
+                    <select name="statistics-select" id="statistics-select">
+                        <option value="confirmed">Confirmed Cases</option>
+                        <option value="deaths">Number of Deaths</option>
+                        <option value="recovered">Number of recovered</option>
+                        <option value="critical">Number of critical condition</option>
+                    </select>
+                </div>
+                <button class="btn submit">Submit</button>
+            </form>
+                
+            </div>
+          
+        </section>
+        
+        <section id="chart-section">
+            <div class="chart-container">
+            <canvas class="chart"> 
+                 </canvas>
+                 
+                </div>
+                <div class="countries"></div>
+            </section>
+        
+      
+       <section id="country-stat">
+            
+      
+       </section>
+       
+        
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
