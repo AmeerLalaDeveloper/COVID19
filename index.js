@@ -37,7 +37,7 @@ async function getCountriesAPI(){
     
 }
 async function getCoronaStatsAPI(){
-if(!window.localStorage.getItem('coronaStats')&&!window.localStorage.getItem('countries')){
+if(!window.localStorage.getItem('coronaStats')){
     const requestCorona=await (await fetch(coronaURL)).json();
     let coronaStats=requestCorona.data;
     const str=coronaStats.map(item=>{
@@ -55,6 +55,9 @@ if(!window.localStorage.getItem('coronaStats')&&!window.localStorage.getItem('co
     window.localStorage.setItem('coronaStats',JSON.stringify(str))
 }
 }
+function getItemFromLocalStorage(item){
+return JSON.parse(localStorage.getItem(item))
+}
 
 window.onload=async ()=>{
 await getCountriesAPI()
@@ -64,9 +67,6 @@ coronaStatsFinal=getItemFromLocalStorage('coronaStats')
 window.scrollTo(0,0)
 }
 
-function getItemFromLocalStorage(item){
-return JSON.parse(localStorage.getItem(item))
-}
 
 function handleInputs(){
     const selectedContinent=selectors[0].value;
