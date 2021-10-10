@@ -22,7 +22,16 @@ const countriesDiv=document.querySelector('.countries')
 let isURLRequested=false;
 async function getCountriesAPI(){
     if(!window.localStorage.getItem('countries')){
+        const request=await (await fetch(countriesURl)).json();
+        console.log(request);
+     let countries=request.map(country=>{
+
+        return {
+            name:country.name.common,
+            region:country.region
+        }
        
+     })
         window.localStorage.setItem('countries',JSON.stringify(countries))
          }
     
